@@ -98,19 +98,68 @@ Set-Date -Adjust $timeToAdd
 ```
 
 
+#CMDlets
 
+### Create unique CMDlets
+```
+$list = "one","two","two","three","four","five"    //create variable list and assign values
+$list | sort | get-unique                          //get the list, sort it and get unique values
+```
+### Measure-object
+```
+Get-Content text.txt | Measure-Object -Character -Line -Word
+```
+### Get no. of childs
+```
+Get-ChildItem | Measure-Object
+```
+### Compare
+```
+Compare-Object -ReferenceObject $(Get-Content test.txt) -DifferenceObject $(Get-Content test1.txt)                 //shows different content
+Compare-Object -ReferenceObject $(Get-Content test.txt) -DifferenceObject $(Get-Content test1.txt) -IncludeEqual   //shows different and equal content
+```
+### Format List
+```
+$A = Get-ChildItem .\*.txt    //Create variable contains all .txt files     
+Format-List -InputObject $A   //List properties of all files of variable
 
-
-
-
-
-
-
-
-
-
-
-
+Get-Service | Format-List
+```
+### Format Wide
+```
+$A = Get-ChildItem .\*test*                   //Create variable contain all files named *test*
+Format-Wide -InputObject $A                   //List all the files of variable
+Format-Wide -InputObject $A -Property Length  //Shows the content length of these files
+```
+### Where-Object
+```
+Get-Service | Where-Object {$_.Status -eq "Stopped"}          //Show the list of services "Stopped"
+Get-Process | Where-Object {$_.ProcessName -Match "^p.*"}     //Get the list of process matching regex
+```
+### Get-ChildItem
+```
+Get-ChildItem -Name
+ls -Name
+```
+### For-Each
+```
+123,456,789 | ForEach-Object -Process {$_/50}                           //divide numbers by 50 and print it
+"one,two,three,four","five,six,seven" | ForEach-Object {$_.Split(",")}  //takes two objects, splits by regex and print it
+```
+### Start-Sleep
+```
+Start-Sleep -Seconds 15       //suspend console fot 15seconds
+```
+### Read-Host
+```
+$var = Read-Host "Type a variable"  //ask for a variable and assign it to variable $var
+$var                                //print variable $var
+```
+### Select-Object
+```
+Get-Process | Select-Process -Property ProcessName, Id, WS -Last 5  //get processes, select properties, print last 5
+"a","b","c","a","a","a" | Select-Object -Unique                     //get unique values of arr
+```
 
 
 
