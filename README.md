@@ -198,6 +198,88 @@ Get-Culture                              //gets current culture set in windows
 ```
 
 
+#Operators
+
+### Comparision
+```
+A -eq B Equals            ==
+A -ne B Not Equals        !=
+A -gt B Greater than      >
+A -ge B Greater or equal  >=
+A -lt B Less than         <
+A -le B Less or equal     <=
+```
+### Assignment
+```
+=   $c=30
++=  $c+=30  //$c=60
+-=  $c-=20  //$c=40
+```
+### Logical
+```
+-AND        //$a -AND $b
+-OR         //$a -OR $b
+-NOT        //-NOT ($a -AND $b)
+```
+### Other
+```
+$a = "monia"
+$b = "krzys"
+$a -like '*oni*'      //true
+$a -notLike '*oni*'   //false
+$b -match '[h$]'      //true if any letter match 'h'
+$b -notMatch '[h$]'   //false if any letter match 'h'
+$a -contains $b       //true if any object repeats
+$a -notContains $b    //true if none object repeats
+```
+
+
+# Other
+
+### Location
+```
+Get-Location | Get-Member   //shows type of used variable
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
