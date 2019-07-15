@@ -1,1 +1,0 @@
-﻿New-Item -Path 'C:\MyScripts\New Folder' -ItemType Directory
