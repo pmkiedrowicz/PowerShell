@@ -98,7 +98,7 @@ Set-Date -Adjust $timeToAdd
 ```
 
 
-#CMDlets
+# CMDlets
 
 ### Create unique CMDlets
 ```
@@ -160,6 +160,44 @@ $var                                //print variable $var
 Get-Process | Select-Process -Property ProcessName, Id, WS -Last 5  //get processes, select properties, print last 5
 "a","b","c","a","a","a" | Select-Object -Unique                     //get unique values of arr
 ```
+### Sort-Object
+```
+Get-Process | Sort-Object -Property WS | Select-Object -Last 5  //gets process, sort it by property WS and select last 5
+"h","s","a","o","z","y" | Sort-Object                           //sort array
+```
+### Write-Warning
+```
+Write-Warning "CPU's are reaching maximum usage!"
+```
+### Write-Host
+```
+Write-Host (1,2,3,4,5,6,7) -Separator " -> " -ForegroundColor Red -BackgroundColor White
+```
+### Invoke-Item
+```
+Invoke-Item text.txt    //open file with default editor
+```
+### Invoke-Expression
+```
+$var = 'Get-Process'     //create variable
+Invoke-Expression $var   //use variable data as command
+```
+### Measure-Command
+```
+Measure-Command {Get-EventLog "Windows PowerShell"}  //measure time of executing command
+```
+### Invoke-History
+```
+Invoke-History  //run last command again
+```
+### Add-History/Get-History/Get-Culture
+```
+Get-History -Count 5 | Add-History       //select last 5 commands and add them to history
+Get-History
+Get-Culture                              //gets current culture set in windows
+```
+
+
 
 
 
