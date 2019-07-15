@@ -229,9 +229,46 @@ $a -like '*oni*'      //true
 $a -notLike '*oni*'   //false
 $b -match '[h$]'      //true if any letter match 'h'
 $b -notMatch '[h$]'   //false if any letter match 'h'
-$a -contains $b       //true if any object repeats
-$a -notContains $b    //true if none object repeats
+$a -contains $b       //true if any entire object repeats
+$a -notContains $b    //true if none entire object repeats
 ```
+
+
+# Loop
+
+### For Loop
+```
+$arr = "item1","item2","item3"              //create array
+for($i = 0; $i -lt $arr.length; $i++){      //iterate through elements and print it
+$arr[$i]
+}
+```
+### For Each Loop
+```
+$arr = "item1","item2","item3"              //create array
+foreach ($el in $arr){$el}                  //print all elements
+$arr | foreach {$_}
+```
+### While Loop
+```
+$arr = "item1","item2","item3"              //create array
+$i = 0                                      //create counter
+while(#i -lt $arr.length){                  //while counter is less than arr elements...
+$arr[$i]                                    //print element...
+$i += 1                                     //and add counter +1
+}
+```
+### Do While Loop
+```
+$arr = "item1","item2","item3"              //create array
+$i = 0                                      //create counter
+do {
+$arr[$i]                                    //print current element...
+$i ++                                       //increment counter...
+}while($i -lt $arr.length)                  //while is less than arr length
+```
+
+
 
 
 # Other
