@@ -11,6 +11,7 @@ New-Item -Path 'C:\ps\New Folder' -ItemType Directory
 ### Create File
 ```
 New-Item -Path 'C:\ps\New File.txt' -ItemType File
+Set-Content -Path 'C:\ps\New File.txt' 'Content of this file'
 ```
 ### Copy Folder (specified)
 ```
@@ -44,6 +45,15 @@ Remove-Item 'C:\ps\text.txt`
 ```
 Remove-Item 'C:\ps\text.txt`
 ```
+### Append Text Data
+```
+Set-Content C:\ps\text.txt 'Hello'      //set new content, removes old one
+Add-Content C:\ps\text.txt 'World!'     //add content in new line
+```
+### Erase Content
+```
+Clear-Content C:\ps\text.txt
+```
 ### Move Folder (with content)
 ```
 Move-Item C:\ps\newFolder C:\ps\newFolder2
@@ -74,7 +84,7 @@ Test-Path c:\ps\notExisted.txt
 ```
 
 
-# Dates and Timers
+# Date and Time
 
 ### Get/Set Date
 ```
